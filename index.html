@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOTANKA — одяг з душею</title>
+<meta name="description" content="MOTANKA — український бренд одягу з авторськими принтами художниці Ангеліни Науменко. Худі, кофти й футболки, де український символ стає оберегом на кожен день.">
+<meta property="og:title" content="MOTANKA — одяг з душею">
+<meta property="og:description" content="Авторські принти, в яких український символ стає оберегом на кожен день.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#17130f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2317130f'/%3E%3Cpath d='M32 14v36M17 32h30' stroke='%23c8352b' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --linen:#f3ece0;--paper:#fbf7f0;--ink:#17130f;--ink-2:#2a231c;--muted:#6c6257;--line:#e1d6c4;
+  --red:#c8352b;--red-deep:#9e2219;--ochre:#c98a3a;--fox:#de5a1f;--cream:#f6efe3;
+  --display:"Forum",Georgia,serif;--accent:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",system-ui,sans-serif;
+  --stitch:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M3 3l8 8M11 3l-8 8M17 3l8 8M25 3l-8 8' stroke='%23c8352b' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--linen);color:var(--ink);font:400 16px/1.65 var(--sans);overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
+
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.02;letter-spacing:.01em}
+h2{font-size:clamp(38px,6vw,64px)}
+em.acc{font-family:var(--accent);font-style:italic;font-weight:500;letter-spacing:0}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 16px}
+.lead{font-size:18px;color:var(--muted);max-width:34em}
+.stitch{height:14px;background:var(--stitch) repeat-x center/28px 14px}
+
+/* Кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:15px 26px;font:700 15px var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--ink);color:var(--cream)}
+.btn-dark:hover{background:var(--red)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--cream)}
+.btn-light{background:var(--cream);color:var(--ink)}
+.btn-light:hover{background:var(--red);color:var(--cream)}
+.btn svg{width:18px;height:18px}
+
+/* Шапка */
+.top{position:sticky;top:0;z-index:20;background:rgba(243,236,224,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.scrolled{border-color:var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{text-decoration:none;display:grid;line-height:1}
+.logo b{font:400 26px var(--display);letter-spacing:.22em}
+.logo small{font:500 10px var(--sans);letter-spacing:.14em;color:var(--muted);margin-top:4px}
+.nav{display:none;gap:30px;font-size:14px;font-weight:600}
+.nav a{text-decoration:none;color:var(--ink-2);position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--red);transition:right .25s}
+.nav a:hover::after{right:0}
+.top .btn{padding:11px 18px;font-size:14px}
+
+/* Перший екран */
+.hero{position:relative;padding:36px 0 70px}
+.hero-grid{display:grid;gap:40px;align-items:center}
+.hero h1{font-size:clamp(64px,13vw,150px);line-height:.9}
+.hero h1 em.acc{display:block;color:var(--red);font-size:.62em;margin-top:8px}
+.hero .lead{margin:26px 0 32px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-meta{display:flex;gap:28px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.hero-meta div{font-size:13px;color:var(--muted);line-height:1.4}
+.hero-meta b{display:block;font:400 30px var(--display);color:var(--ink)}
+.hero-art{position:relative;max-width:460px;margin:0 auto;width:100%}
+.arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 24px 24px;background:radial-gradient(120% 80% at 50% 10%,#2f261d 0%,var(--ink) 70%);overflow:hidden;box-shadow:0 30px 60px -30px rgba(23,19,15,.6)}
+.arch::before{content:"";position:absolute;inset:14px;border-radius:999px 999px 14px 14px;border:1px solid rgba(246,239,227,.18)}
+.arch .doll{position:absolute;left:50%;bottom:-2%;width:70%;transform:translateX(-50%)}
+.arch .rays{position:absolute;inset:0;opacity:.5}
+.tag{position:absolute;background:var(--paper);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;box-shadow:0 10px 30px -12px rgba(23,19,15,.45);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.tag i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--red))}
+.tag.t1{left:-6%;top:22%;animation:float 6s ease-in-out infinite}
+.tag.t2{right:-4%;top:48%;animation:float 7s ease-in-out -2s infinite}
+.tag.t3{left:4%;bottom:10%;animation:float 6.5s ease-in-out -4s infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* Стрічка */
+.ribbon{background:var(--ink);color:var(--cream);overflow:hidden;padding:18px 0;border-block:6px solid var(--red)}
+.ribbon-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.ribbon span{font:400 26px var(--display);letter-spacing:.12em;text-transform:uppercase;padding:0 26px;display:flex;align-items:center;gap:52px;white-space:nowrap}
+.ribbon span::after{content:"";width:22px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z' fill='%23c98a3a'/%3E%3C/svg%3E") center/contain no-repeat}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+section{padding:96px 0}
+
+/* Маніфест */
+.manifest{display:grid;gap:40px}
+.manifest blockquote{margin:0;font:500 clamp(28px,4vw,44px)/1.2 var(--accent);font-style:italic;color:var(--ink)}
+.manifest blockquote b{font-weight:600;color:var(--red)}
+.manifest p{margin:0 0 16px;color:var(--ink-2);font-size:17px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:28px}
+.facts div{background:var(--paper);padding:20px 16px}
+.facts b{display:block;font:400 22px var(--display);margin-bottom:4px}
+.facts span{font-size:13px;color:var(--muted);line-height:1.4;display:block}
+
+/* Колекція */
+.coll-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.filters button:hover{border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.grid{display:grid;gap:22px;grid-template-columns:1fr}
+.card{background:var(--paper);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 28px 50px -30px rgba(23,19,15,.45)}
+.card[hidden]{display:none}
+.card-art{position:relative;aspect-ratio:1/1;background:var(--bg,#e9dfcf);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.card-art svg.garment{width:78%;height:auto;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .card-art svg.garment{transform:scale(1.04) rotate(-1deg)}
+.badge{position:absolute;left:16px;top:16px;background:var(--ink);color:var(--cream);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
+.badge.red{background:var(--red)}
+.side{position:absolute;right:16px;top:16px;font-size:12px;font-weight:600;color:var(--muted);background:rgba(251,247,240,.85);padding:6px 11px;border-radius:999px}
+.card-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body h3{font-size:28px}
+.card-body p{margin:0;color:var(--muted);font-size:15px}
+.swatches{display:flex;gap:8px;margin-top:4px}
+.swatches button{width:26px;height:26px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1.5px var(--line);background:var(--sw);cursor:pointer;padding:0}
+.swatches button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink)}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:14px}
+.price{font:400 26px var(--display)}
+.price small{font:600 13px var(--sans);color:var(--muted)}
+.card-foot .btn{padding:11px 18px;font-size:14px}
+.note{margin:26px 0 0;color:var(--muted);font-size:14px;text-align:center}
+
+/* Символи */
+.symbols{background:var(--ink);color:var(--cream);position:relative;overflow:hidden}
+.symbols .kicker{color:var(--ochre)}
+.symbols h2{max-width:13em}
+.sym-grid{display:grid;gap:18px;margin-top:48px}
+.sym{border:1px solid rgba(246,239,227,.14);border-radius:24px;padding:30px 26px;background:linear-gradient(180deg,rgba(246,239,227,.04),transparent);transition:border-color .3s,transform .3s}
+.sym:hover{border-color:rgba(200,53,43,.7);transform:translateY(-4px)}
+.sym svg{width:84px;height:84px;margin-bottom:22px}
+.sym h3{font-size:32px;margin-bottom:10px}
+.sym p{margin:0;color:rgba(246,239,227,.72)}
+.sym q{display:block;margin-top:18px;font:500 20px/1.35 var(--accent);font-style:italic;color:var(--ochre);quotes:none}
+
+/* Про авторку */
+.author{display:grid;gap:44px;align-items:center}
+.canvas{position:relative;aspect-ratio:1/1;max-width:480px;width:100%;margin:0 auto}
+.canvas .frame{position:absolute;inset:0;background:var(--paper);border-radius:28px;border:1px solid var(--line);box-shadow:0 30px 60px -36px rgba(23,19,15,.5);overflow:hidden}
+.canvas .frame svg{width:100%;height:100%}
+.canvas .sign{position:absolute;right:-10px;bottom:-18px;background:var(--red);color:var(--cream);border-radius:18px;padding:14px 20px;font:500 22px var(--accent);font-style:italic;transform:rotate(-4deg);box-shadow:0 18px 30px -16px rgba(158,34,25,.7)}
+.author ul{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:12px}
+.author li{display:flex;gap:14px;align-items:flex-start;font-size:16px}
+.author li::before{content:"";flex:0 0 18px;height:18px;margin-top:4px;background:var(--stitch) left center/28px 14px no-repeat;background-size:36px 18px}
+
+/* Instagram */
+.insta-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px}
+.insta{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(326px,100%),1fr));align-items:start}
+.insta blockquote.instagram-media{margin:0!important;min-width:0!important;width:100%!important;border-radius:18px!important;border:1px solid var(--line)!important;box-shadow:none!important;background:var(--paper)!important}
+.insta .ph{display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:300px;padding:26px;text-decoration:none}
+.insta .ph b{font:400 26px var(--display)}
+.insta .ph span{color:var(--muted);font-size:14px}
+
+/* Як замовити */
+.steps{display:grid;gap:18px;margin-top:44px;counter-reset:s}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px 24px;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font:400 52px var(--display);color:var(--red);line-height:1;display:block;margin-bottom:16px}
+.step h3{font-size:26px;margin-bottom:8px}
+.step p{margin:0;color:var(--muted)}
+
+/* Форма замовлення */
+.order{background:var(--ink);color:var(--cream);border-radius:32px;padding:38px 24px;display:grid;gap:34px;position:relative;overflow:hidden}
+.order::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:var(--stitch) repeat-x center/28px 14px;opacity:.9}
+.order h2{font-size:clamp(36px,5vw,56px)}
+.order .lead{color:rgba(246,239,227,.7)}
+form{display:grid;gap:16px}
+.row{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+label{display:grid;gap:7px;font-size:13px;font-weight:700;letter-spacing:.04em;color:rgba(246,239,227,.8)}
+select,input,textarea{font:500 16px var(--sans);color:var(--cream);background:rgba(246,239,227,.07);border:1px solid rgba(246,239,227,.22);border-radius:14px;padding:14px;width:100%;appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23f6efe3' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px;padding-right:38px}
+select option{color:var(--ink)}
+textarea{min-height:92px;resize:vertical}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--ochre)}
+.preview{background:rgba(246,239,227,.06);border:1px dashed rgba(246,239,227,.3);border-radius:14px;padding:14px 16px;font-size:14px;color:rgba(246,239,227,.85);white-space:pre-wrap;min-height:3em}
+.status{min-height:1.4em;font-size:14px;color:var(--ochre);margin:0}
+
+footer{padding:60px 0 40px;text-align:center}
+footer .logo{justify-items:center;margin-bottom:20px}
+footer .logo b{font-size:40px}
+footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:22px;font-size:14px;font-weight:600;margin-bottom:24px}
+footer nav a{text-decoration:none}
+footer nav a:hover{color:var(--red)}
+footer p{color:var(--muted);font-size:13px;margin:0}
+
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;transform:translateY(130%);transition:transform .35s}
+.dock.show{transform:none}
+.dock .btn{width:100%;box-shadow:0 14px 30px -12px rgba(23,19,15,.6)}
+
+/* Поява при скролі */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (min-width:700px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .sym-grid{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .order{padding:56px}
+}
+@media (min-width:980px){
+  .wrap{padding:0 32px}
+  .nav{display:flex}
+  .hero{padding:56px 0 100px}
+  .hero-grid{grid-template-columns:1.1fr .9fr}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .manifest{grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .author{grid-template-columns:1fr 1fr;gap:90px}
+  .order{grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+  .dock{display:none}
+}
+@media (max-width:420px){
+  .row{grid-template-columns:1fr}
+  .hero-meta{gap:18px}
+  .tag.t1{left:-2%}.tag.t2{right:-2%}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Бібліотека ілюстрацій -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="xstitch" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M2 2l6 6M8 2l-6 6" stroke="#c98a3a" stroke-width="1.4" stroke-linecap="round"/>
+    </pattern>
+    <pattern id="xstitchRed" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M2 2l6 6M8 2l-6 6" stroke="#c8352b" stroke-width="1.5" stroke-linecap="round"/>
+    </pattern>
+    <linearGradient id="fire" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#b8361a"/><stop offset=".55" stop-color="#e5651f"/><stop offset="1" stop-color="#f6b143"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Мотанка: без обличчя, з хрестом -->
+  <symbol id="motanka" viewBox="0 0 200 300">
+    <path d="M100 118c-22 0-33 8-37 22L34 268c-2 10 4 16 14 18 18 4 36 6 52 6s34-2 52-6c10-2 16-8 14-18l-29-128c-4-14-15-22-37-22z" fill="#2a231c"/>
+    <path d="M100 150c-12 0-18 6-20 14l-12 110c14 3 22 4 32 4s18-1 32-4l-12-110c-2-8-8-14-20-14z" fill="#f6efe3"/>
+    <rect x="72" y="176" width="56" height="70" fill="url(#xstitchRed)" opacity=".9"/>
+    <path d="M44 236c37 10 75 10 112 0" stroke="#c98a3a" stroke-width="5" fill="none"/>
+    <path d="M40 254c40 11 80 11 120 0" stroke="#c8352b" stroke-width="7" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/>
+    <rect x="30" y="112" width="140" height="22" rx="11" fill="#f6efe3"/>
+    <rect x="30" y="112" width="22" height="22" rx="11" fill="#c8352b"/>
+    <rect x="148" y="112" width="22" height="22" rx="11" fill="#c8352b"/>
+    <circle cx="100" cy="74" r="34" fill="#f6efe3"/>
+    <path d="M100 42v64M70 74h60" stroke="#c8352b" stroke-width="8" stroke-linecap="round"/>
+    <path d="M60 80c0-34 18-54 40-54s40 20 40 54c0 6-2 12-4 16-6-26-18-42-36-42s-30 16-36 42c-2-4-4-10-4-16z" fill="#c8352b"/>
+    <circle cx="80" cy="44" r="3" fill="#f6efe3"/><circle cx="100" cy="36" r="3" fill="#f6efe3"/><circle cx="120" cy="44" r="3" fill="#f6efe3"/>
+    <path d="M62 96c10 14 24 22 38 22s28-8 38-22l10 24c-14 10-30 14-48 14s-34-4-48-14z" fill="#9e2219"/>
+  </symbol>
+
+  <!-- Вогняна лисичка -->
+  <symbol id="fox" viewBox="0 0 200 200">
+    <path d="M118 168c40-4 66-38 56-84-4 22-16 34-30 36 18-24 14-58-12-76 8 26-2 46-18 54 8-20 0-40-16-48 4 30-14 46-14 70 0 30 14 50 34 48z" fill="url(#fire)"/>
+    <path d="M58 176c-8-34 4-62 32-70l26 60c-14 10-36 14-58 10z" fill="#de5a1f"/>
+    <path d="M30 70l10-44 26 30h28l26-30 10 44-50 50z" fill="#de5a1f"/>
+    <path d="M30 70l50 50-24-6-24-24z" fill="#f6efe3"/>
+    <path d="M130 70l-50 50 24-6 24-24z" fill="#f6efe3"/>
+    <path d="M44 34l14 18-10 4zM116 34l-14 18 10 4z" fill="#2a231c"/>
+    <circle cx="64" cy="76" r="4.5" fill="#2a231c"/><circle cx="96" cy="76" r="4.5" fill="#2a231c"/>
+    <path d="M74 112h12l-6 8z" fill="#2a231c"/>
+  </symbol>
+
+  <!-- Господиня: восьмипроменева зірка -->
+  <symbol id="star" viewBox="0 0 200 200">
+    <g transform="translate(100 100)">
+      <g fill="#c8352b">
+        <path id="petal" d="M0-92L18-34 0-18-18-34z"/>
+        <use href="#petal" transform="rotate(45)"/><use href="#petal" transform="rotate(90)"/><use href="#petal" transform="rotate(135)"/>
+        <use href="#petal" transform="rotate(180)"/><use href="#petal" transform="rotate(225)"/><use href="#petal" transform="rotate(270)"/><use href="#petal" transform="rotate(315)"/>
+      </g>
+      <rect x="-26" y="-26" width="52" height="52" transform="rotate(45)" fill="#f2b33d"/>
+      <rect x="-12" y="-12" width="24" height="24" transform="rotate(45)" fill="#c8352b"/>
+      <circle r="5" fill="#f6efe3"/>
+    </g>
+  </symbol>
+
+  <!-- Логотип-принт -->
+  <symbol id="wordmark" viewBox="0 0 220 60">
+    <text x="110" y="34" text-anchor="middle" font-family="Forum, Georgia, serif" font-size="30" letter-spacing="7" fill="currentColor">MOTANKA</text>
+    <path d="M70 46h80" stroke="currentColor" stroke-width="1.2"/>
+  </symbol>
+
+  <!-- Силуети одягу -->
+  <symbol id="hoodie" viewBox="0 0 260 280">
+    <path d="M92 34c8-22 68-22 76 0l58 26c10 4 14 12 16 22l14 150c1 8-4 13-12 14l-26 3c-7 1-12-3-13-10l-11-104v148c0 8-5 13-13 13H79c-8 0-13-5-13-13V135L55 239c-1 7-6 11-13 10l-26-3c-8-1-13-6-12-14L18 82c2-10 6-18 16-22z" fill="var(--cloth,#2a231c)"/>
+    <path d="M92 34c6 26 22 40 38 40s32-14 38-40c-10-14-66-14-76 0z" fill="rgba(0,0,0,.18)"/>
+    <path d="M118 74v40M142 74v40" stroke="rgba(255,255,255,.35)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M86 196h88l-8 40H94z" fill="rgba(0,0,0,.12)"/>
+    <path d="M66 258h128" stroke="rgba(0,0,0,.18)" stroke-width="10"/>
+  </symbol>
+  <symbol id="tee" viewBox="0 0 260 280">
+    <path d="M90 26c10 16 24 22 40 22s30-6 40-22l66 30c6 3 9 9 7 15l-20 52c-2 6-9 9-15 7l-20-8v138c0 8-5 13-13 13H85c-8 0-13-5-13-13V122l-20 8c-6 2-13-1-15-7L17 71c-2-6 1-12 7-15z" fill="var(--cloth,#f6efe3)"/>
+    <path d="M90 26c10 16 24 22 40 22s30-6 40-22" stroke="rgba(0,0,0,.18)" stroke-width="5" fill="none"/>
+  </symbol>
+  <symbol id="top" viewBox="0 0 260 280">
+    <path d="M86 40h22c6 22 14 30 22 30s16-8 22-30h22l8 54 26 14-8 110c-1 8-6 12-14 12H74c-8 0-13-4-14-12l-8-110 26-14z" fill="var(--cloth,#d8c3a5)"/>
+    <path d="M78 94c34 10 70 10 104 0" stroke="rgba(0,0,0,.12)" stroke-width="3" fill="none"/>
+  </symbol>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#hero" aria-label="MOTANKA, на початок"><b>MOTANKA</b><small>Angelina Naumenko</small></a>
+    <nav class="nav" aria-label="Розділи">
+      <a href="#collection">Колекція</a>
+      <a href="#symbols">Символи</a>
+      <a href="#author">Про авторку</a>
+      <a href="#order">Замовити</a>
+    </nav>
+    <a class="btn btn-dark" href="https://ig.me/m/motanka.naumenko" target="_blank" rel="noopener">Direct</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="wrap hero-grid">
+      <div class="rv">
+        <p class="kicker">Український авторський бренд</p>
+        <h1>Одяг з&nbsp;душею <em class="acc">і&nbsp;оберегом на&nbsp;спині</em></h1>
+        <p class="lead">MOTANKA — це худі, кофти й футболки з авторськими принтами художниці Ангеліни Науменко. Кожен малюнок несе український символ і має свою історію.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="#collection">Дивитися колекцію
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="#symbols">Що означають принти</a>
+        </div>
+        <div class="hero-meta">
+          <div><b>3</b>авторські<br>принти</div>
+          <div><b>6</b>кольорів<br>базових футболок</div>
+          <div><b>🤍</b>дбайливе<br>пакування</div>
+        </div>
+      </div>
+      <div class="hero-art rv">
+        <div class="arch">
+          <svg class="rays" viewBox="0 0 400 500" aria-hidden="true">
+            <g stroke="#c98a3a" stroke-width="1" opacity=".55">
+              <path d="M200 260L200 0M200 260L60 20M200 260L340 20M200 260L0 120M200 260L400 120M200 260L0 260M200 260L400 260"/>
+            </g>
+            <circle cx="200" cy="200" r="120" fill="none" stroke="#c98a3a" stroke-opacity=".35" stroke-dasharray="3 8"/>
+          </svg>
+          <svg class="doll" viewBox="0 0 200 300" role="img" aria-label="Ілюстрація ляльки-мотанки"><use href="#motanka"/></svg>
+        </div>
+        <span class="tag t1"><i></i>Берегиня</span>
+        <span class="tag t2" style="--c:var(--fox)"><i></i>Вогняна лисичка</span>
+        <span class="tag t3" style="--c:#f2b33d"><i></i>Господиня</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track">
+      <span>Одяг з душею</span><span>Берегиня</span><span>Господиня</span><span>Вогняна лисичка</span><span>Український символ</span>
+      <span>Одяг з душею</span><span>Берегиня</span><span>Господиня</span><span>Вогняна лисичка</span><span>Український символ</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap manifest">
+      <div class="rv">
+        <p class="kicker">Чому MOTANKA</p>
+        <blockquote>Мотанку не шили — її <b>мотали</b> з&nbsp;клаптиків тканини й&nbsp;ниток і&nbsp;робили без обличчя. Вона берегла дім.</blockquote>
+      </div>
+      <div class="rv">
+        <p>Бренд переносить цю ідею в сучасний гардероб. Тут немає випадкових картинок: кожен принт — авторський малюнок, у якому живе український образ із характером і змістом.</p>
+        <p>Це одяг, який хочеться носити щодня, і водночас річ із сенсом, яку приємно подарувати або залишити собі як нагадування про силу роду.</p>
+        <div class="facts">
+          <div><b>Авторське</b><span>кожен принт намальований від руки</span></div>
+          <div><b>Українське</b><span>символи, традиції, власний бренд</span></div>
+          <div><b>Затишне</b><span>флісові худі й легкі літні речі</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="collection" style="padding-top:0">
+    <div class="wrap">
+      <div class="coll-head rv">
+        <div>
+          <p class="kicker">Колекція</p>
+          <h2>Речі, які&nbsp;<em class="acc">говорять</em></h2>
+        </div>
+        <div class="filters" role="group" aria-label="Фільтр колекції">
+          <button type="button" data-f="all" aria-pressed="true">Усе</button>
+          <button type="button" data-f="warm" aria-pressed="false">Худі й кофти</button>
+          <button type="button" data-f="tee" aria-pressed="false">Футболки</button>
+          <button type="button" data-f="summer" aria-pressed="false">Літо</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="note">Наявність, розміри й ціни на нові моделі уточнюйте в Direct. Відповідь приходить особисто від авторки.</p>
+    </div>
+  </section>
+
+  <section class="symbols" id="symbols">
+    <div class="wrap">
+      <p class="kicker rv">Символи</p>
+      <h2 class="rv">За кожним принтом — <em class="acc">історія</em></h2>
+      <div class="sym-grid">
+        <article class="sym rv">
+          <svg viewBox="0 0 200 300" aria-hidden="true"><use href="#motanka"/></svg>
+          <h3>Берегиня</h3>
+          <p>Авторське зображення мотанки, що символізує жіночу силу, материнство й захист.</p>
+          <q>Охоронниця дому, роду та достатку.</q>
+        </article>
+        <article class="sym rv">
+          <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#star"/></svg>
+          <h3>Господиня</h3>
+          <p>Яскравий колір і принт про настрій, який точно не тихий. Для днів, коли хочеться бути помітною.</p>
+          <q>Виглядати яскраво й відчувати себе сильнішою всередині.</q>
+        </article>
+        <article class="sym rv">
+          <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#fox"/></svg>
+          <h3>Вогняна лисичка</h3>
+          <p>Лисичка, яка ніби вийшла просто з вогняної казки. Тепло, м'якість і трохи хитринки.</p>
+          <q>Затишне, але з характером.</q>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="author">
+    <div class="wrap author">
+      <div class="canvas rv">
+        <div class="frame">
+          <svg viewBox="0 0 400 400" aria-hidden="true">
+            <rect width="400" height="400" fill="#f6efe3"/>
+            <circle cx="300" cy="110" r="70" fill="#f2b33d" opacity=".9"/>
+            <path d="M0 290c70-40 130-50 200-30s140 10 200-30v170H0z" fill="#c98a3a" opacity=".55"/>
+            <path d="M0 320c80-30 150-34 220-14s120 6 180-20v114H0z" fill="#c8352b" opacity=".85"/>
+            <g transform="translate(78 92) scale(.78)"><use href="#motanka" width="200" height="300"/></g>
+            <g transform="translate(232 214) scale(.62)"><use href="#fox" width="200" height="200"/></g>
+            <path d="M330 300l46-120" stroke="#2a231c" stroke-width="7" stroke-linecap="round"/>
+            <path d="M372 186c6-14 14-20 22-18-2 10-8 18-22 18z" fill="#c8352b"/>
+          </svg>
+        </div>
+        <div class="sign">Ангеліна Науменко</div>
+      </div>
+      <div class="rv">
+        <p class="kicker">Про авторку</p>
+        <h2>Принт починається <em class="acc">з&nbsp;пензля</em></h2>
+        <p class="lead" style="margin-top:22px">Ангеліна Науменко — художниця з Черкас і засновниця MOTANKA. Кожен принт бренду спершу з'являється як її малюнок, а вже потім переїжджає на тканину.</p>
+        <ul>
+          <li>Пише авторські картини й розписує стіни</li>
+          <li>Проводить майстер-класи з малювання</li>
+          <li>Понад 5 років працює з дітьми</li>
+        </ul>
+        <a class="btn btn-line" href="https://www.instagram.com/_an.gelina_naumenko/" target="_blank" rel="noopener">Instagram художниці</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="live" style="padding-top:0">
+    <div class="wrap">
+      <div class="insta-head rv">
+        <div>
+          <p class="kicker">Наживо</p>
+          <h2>Як це виглядає <em class="acc">на&nbsp;людях</em></h2>
+        </div>
+        <a class="btn btn-line" href="https://www.instagram.com/motanka.naumenko/" target="_blank" rel="noopener">@motanka.naumenko</a>
+      </div>
+      <div class="insta" id="insta">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DNoImvZtnWQ/" data-instgrm-version="14">
+          <a class="ph" href="https://www.instagram.com/p/DNoImvZtnWQ/" target="_blank" rel="noopener"><b>Футболка «Берегиня»</b><span>Відкрити допис в Instagram →</span></a>
+        </blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DWzFJOZDbdX/" data-instgrm-version="14">
+          <a class="ph" href="https://www.instagram.com/p/DWzFJOZDbdX/" target="_blank" rel="noopener"><b>Кофта «Господиня»</b><span>Відкрити допис в Instagram →</span></a>
+        </blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DeHr1eoAApj/" data-instgrm-version="14">
+          <a class="ph" href="https://www.instagram.com/p/DeHr1eoAApj/" target="_blank" rel="noopener"><b>Худі «Вогняна лисичка»</b><span>Відкрити допис в Instagram →</span></a>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker rv">Як замовити</p>
+      <h2 class="rv">Три кроки <em class="acc">до&nbsp;своєї речі</em></h2>
+      <div class="steps">
+        <div class="step rv"><h3>Оберіть річ</h3><p>Знайдіть у колекції принт, який відгукується саме вам.</p></div>
+        <div class="step rv"><h3>Напишіть у Direct</h3><p>Форма нижче сама складе повідомлення з моделлю, розміром і кольором.</p></div>
+        <div class="step rv"><h3>Отримайте з турботою</h3><p>Авторка підтвердить деталі, оплату й доставку та дбайливо запакує замовлення.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" style="padding-top:0">
+    <div class="wrap">
+      <div class="order rv">
+        <div>
+          <p class="kicker" style="color:var(--ochre)">Замовлення</p>
+          <h2>Зберіть своє <em class="acc">повідомлення</em></h2>
+          <p class="lead" style="margin-top:18px">Оберіть модель і розмір — текст скопіюється, а Direct відкриється сам. Залишиться лише вставити й надіслати.</p>
+        </div>
+        <form id="form">
+          <label>Модель<select id="f-item"></select></label>
+          <div class="row">
+            <label>Розмір<select id="f-size"></select></label>
+            <label>Колір<select id="f-color"></select></label>
+          </div>
+          <label>Коментар <span style="font-weight:500;opacity:.6">(необов'язково)</span><textarea id="f-note" placeholder="Наприклад: на подарунок, потрібно до п'ятниці"></textarea></label>
+          <div class="preview" id="f-preview" aria-live="polite"></div>
+          <button class="btn btn-light" type="submit">Скопіювати й відкрити Direct
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="status" id="f-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="stitch" style="max-width:220px;margin:0 auto 34px"></div>
+    <a class="logo" href="#hero"><b>MOTANKA</b><small>одяг з душею · український оберіг</small></a>
+    <nav aria-label="Посилання">
+      <a href="https://www.instagram.com/motanka.naumenko/" target="_blank" rel="noopener">Instagram бренду</a>
+      <a href="https://www.instagram.com/_an.gelina_naumenko/" target="_blank" rel="noopener">Instagram авторки</a>
+      <a href="https://ig.me/m/motanka.naumenko" target="_blank" rel="noopener">Написати в Direct</a>
+    </nav>
+    <p>© <span id="year">2026</span> MOTANKA · Ангеліна Науменко</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock"><a class="btn btn-dark" href="#order">Замовити свою річ</a></div>
+
+<script>
+(function () {
+  var IG = 'https://ig.me/m/motanka.naumenko';
+  var SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  var items = [
+    { id: 'fox', name: 'Худі «Вогняна лисичка»', cat: 'warm', shape: 'hoodie', print: 'fox', side: 'принт на спині',
+      badge: 'Новинка', red: true, bg: '#efd9c4', price: null,
+      text: 'Тепле м\'яке худі на флісі з авторською лисичкою, що ніби вийшла з вогняної казки.',
+      colors: [{ n: 'Чорний', c: '#221c17' }] },
+    { id: 'gospodynia', name: 'Кофта «Господиня»', cat: 'warm', shape: 'hoodie', print: 'star', side: 'авторський принт',
+      bg: '#f3dfb4', price: null,
+      text: 'Яскравий колір і принт про внутрішню силу. Для днів, коли настрій точно не тихий.',
+      colors: [{ n: 'Яскравий', c: '#d9452d' }] },
+    { id: 'berehynia', name: 'Футболка «Берегиня»', cat: 'tee', shape: 'tee', print: 'motanka',
+      badge: 'Символ бренду', bg: '#e7ddd0', price: null,
+      text: 'Мотанка-оберіг: жіноча сила, материнство й захист. Охоронниця дому, роду та достатку.',
+      colors: [{ n: 'Білий', c: '#f6efe3' }, { n: 'Чорний', c: '#221c17' }] },
+    { id: 'base', name: 'Базова футболка MOTANKA', cat: 'tee summer', shape: 'tee', print: 'wordmark',
+      bg: '#dde3e8', price: 550,
+      text: 'Легка приємна тканина, зручний крій і фірмовий логотип. Пасує до будь-якого образу.',
+      colors: [{ n: 'Чорний', c: '#221c17' }, { n: 'Білий', c: '#f6efe3' }, { n: 'Рожевий', c: '#efc3c4' },
+               { n: 'Блакитний', c: '#b9d0e3' }, { n: 'Коричневий', c: '#7a5338' }, { n: 'Темно-синій', c: '#24324f' }] },
+    { id: 'top', name: 'Літній топ', cat: 'summer', shape: 'top', print: null,
+      bg: '#efe6d8', price: 450, onesize: true,
+      text: 'Легкий і стильний топ для спекотних днів, прогулянок та образів на кожен день.',
+      colors: [{ n: 'Таш', c: '#cdb497' }] }
+  ];
+
+  function dark(hex) {
+    var n = parseInt(hex.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255;
+    return (r * 299 + g * 587 + b * 114) / 1000 < 140;
+  }
+  function printSvg(it, color) {
+    if (!it.print) return '';
+    if (it.print === 'wordmark') {
+      return '<use href="#wordmark" x="70" y="96" width="120" height="33" style="color:' + (dark(color) ? '#f6efe3' : '#221c17') + '"/>';
+    }
+    if (it.print === 'motanka') return '<use href="#motanka" x="96" y="78" width="68" height="102"/>';
+    if (it.print === 'fox') return '<use href="#fox" x="82" y="112" width="96" height="96"/>';
+    if (it.print === 'star') return '<use href="#star" x="90" y="120" width="80" height="80"/>';
+    return '';
+  }
+  function garment(it, color) {
+    return '<svg class="garment" viewBox="0 0 260 280" role="img" aria-label="' + it.name + ', колір ' + color.n.toLowerCase() + '">' +
+      '<g style="--cloth:' + color.c + '"><use href="#' + it.shape + '"/></g>' + printSvg(it, color.c) + '</svg>';
+  }
+
+  var grid = document.getElementById('grid');
+  grid.innerHTML = items.map(function (it) {
+    var c = it.colors[0];
+    var sw = it.colors.length > 1 ? '<div class="swatches" role="group" aria-label="Колір">' + it.colors.map(function (col, i) {
+      return '<button type="button" style="--sw:' + col.c + '" aria-label="' + col.n + '" aria-pressed="' + (i === 0) + '" data-i="' + i + '"></button>';
+    }).join('') + '</div>' : '';
+    var price = it.price ? it.price + ' <small>грн</small>' : '<small>ціна в Direct</small>';
+    return '<article class="card rv" data-cat="' + it.cat + '" data-id="' + it.id + '">' +
+      '<div class="card-art" style="--bg:' + it.bg + '">' +
+        (it.badge ? '<span class="badge' + (it.red ? ' red' : '') + '">' + it.badge + '</span>' : '') +
+        (it.side ? '<span class="side">' + it.side + '</span>' : '') +
+        garment(it, c) + '</div>' +
+      '<div class="card-body"><h3>' + it.name + '</h3><p>' + it.text + '</p>' + sw +
+        '<div class="card-foot"><span class="price">' + price + '</span>' +
+        '<button type="button" class="btn btn-dark" data-order="' + it.id + '">Замовити</button></div></div></article>';
+  }).join('');
+
+  // Перемикання кольорів
+  grid.addEventListener('click', function (e) {
+    var sw = e.target.closest('.swatches button');
+    if (sw) {
+      var card = sw.closest('.card'), it = items.find(function (x) { return x.id === card.dataset.id; });
+      var col = it.colors[+sw.dataset.i];
+      card.querySelectorAll('.swatches button').forEach(function (b) { b.setAttribute('aria-pressed', b === sw); });
+      card.querySelector('svg.garment').outerHTML = garment(it, col);
+      card.dataset.color = sw.dataset.i;
+      return;
+    }
+    var ob = e.target.closest('[data-order]');
+    if (ob) {
+      var card2 = ob.closest('.card');
+      fItem.value = ob.dataset.order;
+      fillOptions();
+      if (card2.dataset.color) fColor.value = card2.dataset.color;
+      updatePreview();
+      document.getElementById('order').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }
+  });
+
+  // Фільтри
+  document.querySelectorAll('.filters button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.filters button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      var f = b.dataset.f;
+      grid.querySelectorAll('.card').forEach(function (card) {
+        card.hidden = !(f === 'all' || card.dataset.cat.split(' ').indexOf(f) > -1);
+      });
+    });
+  });
+
+  // Форма замовлення
+  var fItem = document.getElementById('f-item'), fSize = document.getElementById('f-size'),
+      fColor = document.getElementById('f-color'), fNote = document.getElementById('f-note'),
+      fPrev = document.getElementById('f-preview'), fStatus = document.getElementById('f-status');
+  fItem.innerHTML = items.map(function (it) { return '<option value="' + it.id + '">' + it.name + '</option>'; }).join('');
+  function current() { return items.find(function (x) { return x.id === fItem.value; }); }
+  function fillOptions() {
+    var it = current();
+    fSize.innerHTML = (it.onesize ? ['Onesize'] : SIZES).map(function (s) { return '<option>' + s + '</option>'; }).join('');
+    if (!it.onesize) fSize.value = 'M';
+    fColor.innerHTML = it.colors.map(function (c, i) { return '<option value="' + i + '">' + c.n + '</option>'; }).join('');
+  }
+  function message() {
+    var it = current(), col = it.colors[+fColor.value || 0];
+    var t = 'Вітаю! Хочу замовити: ' + it.name + '.\nРозмір: ' + fSize.value + '. Колір: ' + col.n.toLowerCase() + '.';
+    if (fNote.value.trim()) t += '\nКоментар: ' + fNote.value.trim();
+    return t + '\nПідкажіть, будь ласка, щодо наявності та доставки.';
+  }
+  function updatePreview() { fPrev.textContent = message(); fStatus.textContent = ''; }
+  fillOptions(); updatePreview();
+  fItem.addEventListener('change', function () { fillOptions(); updatePreview(); });
+  [fSize, fColor, fNote].forEach(function (el) { el.addEventListener('input', updatePreview); el.addEventListener('change', updatePreview); });
+  document.getElementById('form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var text = message();
+    try { await navigator.clipboard.writeText(text); fStatus.textContent = 'Текст скопійовано. Вставте його в діалог і надішліть.'; }
+    catch (err) { fStatus.textContent = 'Скопіюйте текст вище й вставте його в діалог.'; }
+    window.open(IG, '_blank', 'noopener');
+  });
+
+  // Шапка і нижня кнопка
+  var top = document.getElementById('top'), dock = document.getElementById('dock'), orderEl = document.getElementById('order');
+  function onScroll() {
+    var y = window.scrollY;
+    top.classList.toggle('scrolled', y > 8);
+    var r = orderEl.getBoundingClientRect();
+    dock.classList.toggle('show', y > 600 && !(r.top < innerHeight && r.bottom > 0));
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Поява при скролі
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function (el) { io.observe(el); });
+  } else { rv.forEach(function (el) { el.classList.add('in'); }); }
+
+  // Instagram вантажиться, лише коли блок близько
+  var insta = document.getElementById('insta'), loaded = false;
+  function loadIG() {
+    if (loaded) return; loaded = true;
+    var s = document.createElement('script'); s.async = true; s.src = 'https://www.instagram.com/embed.js';
+    document.body.appendChild(s);
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (ents, obs) { if (ents[0].isIntersecting) { loadIG(); obs.disconnect(); } }, { rootMargin: '600px' }).observe(insta);
+  } else { loadIG(); }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
